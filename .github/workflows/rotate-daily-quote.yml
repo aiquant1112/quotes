@@ -1,0 +1,16 @@
+name: Rotate Daily Quote
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs at midnight UTC every day
+  workflow_dispatch:     # Allows manual triggering
+
+jobs:
+  rotate-quote:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Rotate Daily Quote
+        run: |
+          curl -i --request POST 'https://uorjzqhcvhiwfihaefro.supabase.co/functions/v1/rotate-daily-quote' \
+            --header 'Authorization: Bearer ${{ secrets.SUPABASE_ACCESS_TOKEN }}' \
+            --header 'Content-Type: application/json' 

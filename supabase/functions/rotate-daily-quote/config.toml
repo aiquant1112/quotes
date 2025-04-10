@@ -1,0 +1,2 @@
+[functions.rotate-daily-quote]
+verify_jwt = false 
