@@ -12,5 +12,5 @@ jobs:
       - name: Rotate Daily Quote
         run: |
           curl -i --request POST 'https://uorjzqhcvhiwfihaefro.supabase.co/functions/v1/rotate-daily-quote' \
-            --header 'Authorization: Bearer ${{ secrets.SUPABASE_ACCESS_TOKEN }}' \
-            --header 'Content-Type: application/json' 
+            --header "Authorization: Bearer ${{ secrets.SUPABASE_ACCESS_TOKEN }}" \
+            --header "Content-Type: application/json" 
